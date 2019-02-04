@@ -16,7 +16,10 @@ namespace ConsoleApp1
             int skaicius3 = Convert.ToInt32(Console.ReadLine());
 
             int maxnum = max(skaicius1, skaicius2, skaicius3);
+            bool rangeyes = inrange(skaicius1, skaicius2, skaicius3);
+
             Console.WriteLine(maxnum);
+            Console.WriteLine(rangeyes);
 
             Console.ReadLine();
         }
@@ -37,6 +40,23 @@ namespace ConsoleApp1
                 number = c;
             }
             return number;
+        }
+        static bool inrange (int a, int b, int c)
+        {
+            bool range = false;
+            if ((a > b) && (a > c))
+            {
+                range = false;
+            }
+            else if ((a < b) && (a < c))
+            {
+                range = false;
+            }
+            else
+            {
+                range = true;
+            }
+            return range;
         }
     }
 }
