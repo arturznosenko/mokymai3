@@ -17,9 +17,11 @@ namespace ConsoleApp1
 
             int maxnum = max(skaicius1, skaicius2, skaicius3);
             bool rangeyes = inrange(skaicius1, skaicius2, skaicius3);
+            bool rangeyes2 = inrange2(skaicius1, skaicius2, skaicius3);
 
             Console.WriteLine(maxnum);
             Console.WriteLine(rangeyes);
+            Console.WriteLine(rangeyes2);
 
             Console.ReadLine();
         }
@@ -44,7 +46,7 @@ namespace ConsoleApp1
         static bool inrange (int a, int b, int c)
         {
             bool range = false;
-            if ((a > b) && (a > c))
+            if ((a > b) && (a > c))  // if (a>b && a<c)
             {
                 range = false;
             }
@@ -57,6 +59,21 @@ namespace ConsoleApp1
                 range = true;
             }
             return range;
+        }
+
+        static bool inrange2 (int a, int b, int c)
+        {
+            bool range2 = false;
+            if (a > b && a < c)
+            {
+                range2 = true;
+            }
+            else
+            {
+                range2 = false;
+            }
+            return range2;
+
         }
     }
 }
